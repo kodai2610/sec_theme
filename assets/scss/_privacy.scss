@@ -1,0 +1,28 @@
+/*********************************/
+/*            PC Base            */
+/*********************************/
+#privacy {
+  /*** 以下共通部位 ***/
+  background-color: #fff;
+  /*** 以下コンテンツ ***/
+  .top {
+    height: 448px;
+    background-color: #EDEDED;
+    position: relative;
+    @include br(pc-responsive) {
+      height: px_to_vw(448);
+    }
+    @include br('sp') {
+      height: sp_vw(320);
+    }
+    &-meta {
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+  
+  
+
+}

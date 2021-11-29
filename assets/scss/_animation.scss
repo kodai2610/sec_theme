@@ -1,0 +1,357 @@
+
+/*********************************************/
+/*                   fade in                 */
+/*********************************************/
+/* →上からくる動作 */
+.fadein_top {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, transform 2s;
+  transition: opacity 2s, transform 2s, -webkit-transform 2s;
+}
+/*  →左からくる動作 */
+.fadein_left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+}
+/* 　→右からくる動作 */
+.fadein_right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+}
+/* →下からくる動作 */
+.fadein_bottom {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, transform 2s;
+  transition: opacity 2s, transform 2s, -webkit-transform 2s;
+}
+
+.fadein_bottom_fast {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.fadein_bottom_5 {
+  transform: translateY(5%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, transform 2s;
+  transition: opacity 2s, transform 2s, -webkit-transform 2s;
+}
+.fadein_bottom_50 {
+  transform: translateY(50%);
+  opacity: 0;
+  -webkit-transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, transform 2s;
+  transition: opacity 2s, transform 2s, -webkit-transform 2s;
+}
+
+.fadein_bottom_point2 {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: opacity 2s 0.5s, transform 2s 0.5s;
+  @include br('sp') {
+    transition: opacity 1s 0s, transform 1s 0s;
+  }
+}
+
+.fadein_bottom_delay_half {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: opacity 2s 0.5s, transform 2s 0.5s;
+}
+
+
+.fadein_bottom_delay_1s {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: opacity 2s 1s, transform 2s 1s;
+}
+//右斜め下からくる動作(カード用)
+.fadein_bottom_point1 {
+  transform: translateY(100%) rotate(-10deg);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+  @include br('sp') {
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
+  }
+}
+//左斜め下からくる動作(カード用)
+.fadein_bottom_left {
+  transform: translateY(100%) rotate(10deg);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+  @include br('sp') {
+    transform: translateY(100%);
+  }
+}
+.fadein_bottom_point3 {
+  transform: translateY(100%) rotate(10deg);
+  opacity: 0; 
+  transition: opacity 2s 1s, transform 2s 1s;
+  @include br('sp') {
+    transform: translateY(100%);
+    transition: opacity 1s 0s, transform 1s 0s;
+  }
+}
+
+.fadein_bottom_left_delay_1s {
+  transform: translateY(100%) rotate(10deg);
+  opacity: 0; 
+  transition: opacity 2s 1s, transform 2s 1s;
+  @include br('sp') {
+    transform: translateY(100%);
+  }
+}
+
+
+
+/* ②の１、に対して： */
+.top_in_active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.left_in_active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.right_in_active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.bottom_in_active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+//カード用
+.bottom_active_point1 {
+  opacity: 1;
+  transform: translateY(60px) rotate(-10deg);
+  @include br('sp') {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+//カード用
+.bottom_active_point3 {
+  opacity: 1;
+  transform: translateY(60px) rotate(10deg);
+  @include br('sp') {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bottom_active_point2 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+// zoomIn
+.zoomIn {
+  opacity: 1;
+  animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+
+.zoomIn7 {
+  opacity: 1;
+  animation: zoomIn7 0.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+
+  @keyframes zoomIn7 {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+
+
+
+@for $i from 1 through 6 {
+  .zoomIn2-delay#{$i} {
+    opacity: 1;
+    animation-name: zoomIn2-delay#{$i};
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    animation-delay: #{$i * 0.2}s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes zoomIn2-delay#{$i} {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    } 
+  }
+}
+
+.zoomIn3 {
+  animation-name: kf-zoomIn3;
+  animation-duration: 1.5s;
+  animation-timing-function : cubic-bezier(0.25, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+
+  @keyframes kf-zoomIn3 {
+    0% {
+      transform: translate(-50%,-50%) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%,-50%) scale(1);
+    }
+  }
+} //transform調節しただけ
+
+
+@keyframes bounce-animation2 { 
+  0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -200, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -200, 0, 1); opacity: 0;}
+  2.7% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -122.257, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -122.257, 0, 1);  }
+  5.41% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -16.845, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -16.845, 0, 1);  }
+  8.11% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 60.475, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 60.475, 0, 1); }
+  10.71% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.128, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.128, 0, 1); }
+  13.71% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 61.194, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 61.194, 0, 1); opacity: 0.5;}
+  16.62% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 15.37, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 15.37, 0, 1); }
+  19.62% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -22.635, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -22.635, 0, 1); }
+  22.52% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -34.814, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -34.814, 0, 1);  }
+  28.43% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.984, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.984, 0, 1); }
+  34.33% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 14.235, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 14.235, 0, 1); opacity: 1; }
+  46.05% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.823, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.823, 0, 1); }
+  57.86% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.381, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.381, 0, 1); }
+  69.57% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.974, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.974, 0, 1); }
+  81.38% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.398, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.398, 0, 1); }
+  93.19% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.163, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.163, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1;}  
+}
+
+@keyframes bounce-animation3 { 
+  0% {
+    transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -200, 0, 1);
+    opacity: 0;
+  }
+  2.7% {
+    transform: translate(-50%,-50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -122.257, 0, 1);
+  }
+  5.41% {
+    transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -16.845, 0, 1);
+  }
+  8.11% {
+    transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 60.475, 0, 1);
+  }
+  10.71% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 85.128, 0, 1); }
+  13.71% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 61.194, 0, 1); opacity: 0.5;}
+  16.62% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 15.37, 0, 1); }
+  19.62% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -22.635, 0, 1); }
+  22.52% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -34.814, 0, 1);  }
+  28.43% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.984, 0, 1); }
+  34.33% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 14.235, 0, 1); opacity: 1; }
+  46.05% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5.823, 0, 1); }
+  57.86% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.381, 0, 1); }
+  69.57% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.974, 0, 1); }
+  81.38% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.398, 0, 1); }
+  93.19% {transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.163, 0, 1); }
+  100% {
+    transform: translate(-50%, -50%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) ;
+    opacity: 1;
+  }
+}
+
+/*バウンドアニメーション data.html */ 
+
+//scroll中
+.scroll_bounce {
+  animation: bounce-animation2 4000ms linear both;
+}
+.scroll_bounce_middle {
+  animation: bounce-animation3 4000ms linear forwards;
+}
+
+.bounce {
+  opacity: 0;
+}
+
+
+//はじめのtopセクション
+.scroll_bounce01 {
+  animation: bounce-animation2 3000ms linear 1 forwards;
+}
+.scroll_bounce02 {
+  animation: bounce-animation2 3500ms linear  1 forwards;
+}
+.scroll_bounce03 {
+  animation: bounce-animation2 4000ms linear  1 forwards; 
+}
+.scroll_bounce04 {
+  animation: bounce-animation2 4500ms linear  1 forwards;
+}
+.scroll_bounce05 {
+  animation: bounce-animation2 5000ms linear  1 forwards;
+}
+
+
+// loop画像のアニメーション
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

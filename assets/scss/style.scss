@@ -1,0 +1,1205 @@
+@import "./mixin";
+@import "./common";
+@import "./animation";
+@import './data';
+@import './about';
+@import './job-desc';
+@import './news';
+@import './news-detail';
+@import './contact';
+@import './company';
+@import './service';
+@import './privacy';
+@import './sitemap';
+@import './joinus';
+
+/*********************************/
+/*            PC Base            */
+/*********************************/
+#index {
+  /*** 以下共通部位 ***/
+  // top pageのcontentsのtext部分
+  .contents {
+    width: 535px;
+    height: 473px;
+
+    &-wrapper {
+      height: 100%;
+      width: 472px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__text {
+        @include font14;
+        letter-spacing: -0.06em;
+        line-height: 1.7;
+        color: #808080;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+  }
+  
+
+  /*** 以下コンテンツ ***/
+  .top {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    & #animation_container1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+
+      & #canvas1 {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover;
+      }
+
+      & #dom_overlay_container1 {
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+    }
+    & #animation_container2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+
+      & #canvas2 {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover;
+      }
+
+      & #dom_overlay_container2 {
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 108vh;
+    }
+
+    & .top-box {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+    }
+    &__slogan {
+      color: #f15a24;
+      width: 1000px;
+      margin: 0 auto;
+
+      &--en {
+        @include font65;
+        @include font-mont;
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+        top: 30%;
+        mix-blend-mode: multiply;
+      }
+      &--ja {
+        @include font23;
+        font-weight: bold;
+        top: 70%;
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .news {
+    display: none;
+    position: relative;
+    top: -65px;
+
+    &-container {
+      width: 1000px;
+      height: 65px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 32px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 0 80px;
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+
+        &__news {
+          @include font-mont;
+          @include font17;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #f15a24;
+          margin-right: 60px;
+        }
+        &__date {
+          @include font-mont;
+          @include font15;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #999999;
+          margin-right: 10px;
+        }
+
+        &__title {
+          @include font14;
+          letter-spacing: 0.02em;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 500px;
+          overflow: hidden;
+        }
+      }
+
+      &__indicator {
+        width: 112px;
+        height: 10px;
+        background: lightgoldenrodyellow;
+      }
+    }
+  }
+
+  .sec {
+    &-container {
+      &-wrapper {
+        position: relative;
+        display: flex;
+        background: rgba(220, 233, 235, 1);
+        // height: 450px;
+        height: auto;
+        overflow: visible;
+
+        &-image {
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          position: relative;
+          right: 110px;
+          padding-top: 100px;
+
+          &__pop {
+            position: absolute;
+            top: 70px;
+            right: 265px;
+            width: 150px;
+            height: 130px;
+            opacity: 0;
+            z-index: 2;
+          }
+          &__icon {
+            width: 390px;
+            height: 400px;
+            // background: rgba(220, 233, 235, 1);
+            background: none;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+          }
+          &__number {
+            position: absolute;
+            right: 30px;
+            bottom: 10px;
+            @include font90;
+            @include font-mont;
+            font-weight: 100;
+            color: #ed6f4f;
+            letter-spacing: -0.08em;
+            z-index: 2;
+          }
+        }
+
+        &-box {
+          width: 50%;
+          display: flex;
+          background: rgba(243, 247, 249, 1);
+
+          .contents {
+            // height: auto;
+
+            &-wrapper {
+              justify-content: flex-end;
+
+              &__text {
+                height: 200px;
+              }
+            }
+          }
+        }
+
+        &__arrow {
+          position: absolute;
+          left: 50%;
+          top: 0;
+
+          &::before,
+          ::after {
+            position: absolute;
+            top: 40px;
+            bottom: 0;
+            margin: auto;
+            content: "";
+          }
+          &::before {
+            width: 27px;
+            height: 27px;
+            border-top: 1px solid rgba(237, 111, 79, 1);
+            border-right: 1px solid rgba(237, 111, 79, 1);
+            transform: translateX(-50%) rotate(135deg);
+          }
+        }
+      }
+
+      &-wrapper:nth-child(3) {
+        align-items: center;
+        // height: 480px;
+        height: auto;
+        align-items: initial;
+
+        & .sec-container-wrapper {
+          &-box {
+            // height: 100%;
+            // align-items: center;
+          }
+
+          &-image {
+            padding-bottom: 50px;
+
+            &__number {
+              bottom: 60px;
+            }
+            &__pop {
+              top: 70px;
+            }
+          }
+        }
+      }
+    }
+
+    .viewmore {
+      position: relative;
+      bottom: 20px;
+    }
+  }
+
+  //service と companyの共通CSS
+  .sc {
+    &-container {
+      height: 600px;
+      display: flex;
+
+      .contents {
+        background: rgba(243, 247, 249, 1);
+        width: 100%;
+        height: 100%;
+
+        &-wrapper {
+          padding: 0 35px;
+
+          &__text {
+            height: 250px;
+          }
+        }
+      }
+
+      &-image {
+        width: 100%;
+
+        &__image {
+          width: 640px;
+          height: 600px;
+        }
+      }
+    }
+  }
+
+  .service {
+    .sc-container {
+      .contents {
+        &-wrapper {
+          margin: 0 0 0 auto;
+        }
+      }
+
+      &-image {
+        position: relative;
+        overflow: hidden;
+
+        &__image {
+          position: absolute;
+          opacity: 0;
+
+          &--1 {
+            width: 263px;
+            height: 263px;
+            top: 60px;
+            left: -35px;
+          }
+          &--2 {
+            width: 309px;
+            height: 309px;
+            top: -25px;
+            left: 290px;
+          }
+          &--3 {
+            width: 346px;
+            height: 346px;
+            left: 150px;
+            bottom: -65px;
+          }
+        }
+
+        &__bg {
+          position: absolute;
+          top: 0;
+          background: rgba(237, 111, 79, 1);
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          padding-top: 300px;
+          margin-top: -300px;
+        }
+      }
+    }
+  }
+
+  .company {
+    .sc-container {
+      flex-direction: row-reverse;
+
+      .contents {
+        &-wrapper {
+          margin: 0 auto 0 0;
+        }
+      }
+
+      &-image {
+        overflow: hidden;
+        position: relative;
+
+        &__image {
+          opacity: 0;
+          margin: 0 0 0 auto;
+          display: block;
+          border-radius: 50%;
+          position: relative;
+          right: 100px;
+          bottom: 110px;
+          width: 675px;
+          height: 675px;
+        }
+
+        &__bg {
+          position: absolute;
+          top: 0;
+          background: rgba(251, 180, 59, 1);
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          padding-top: 180px;
+          margin-top: -180px;
+        }
+      }
+    }
+  }
+  
+  .contact {
+    &-container {
+      display: flex;
+      border-radius: 41px;
+      overflow: hidden;
+      width: 1000px;
+      margin: auto;
+      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+      @include font0;
+      margin-top: 65px;
+  
+      .contents {
+        background: rgba(220, 233, 235, 1);
+        width: 500px;
+        &-wrapper {
+          width: 430px;
+          &__text {
+            height: 250px;
+          }
+        }
+      }
+      &-image {
+        width: 500px;
+        background: white;
+        // padding-top: 1000px;
+        // margin-top: -1000px;
+  
+        &__image {
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  
+}
+
+/*********************************/
+/*         PC Responsive         */
+/*********************************/
+@media (max-width: 1400px) {
+  #index {
+    .top {
+      .top-box {
+        left: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  #index {
+    /*** 以下共通部位 ***/
+    // top pageのcontentsのtext部分
+    .contents {
+      width: 41.797vw;
+      height: 36.953vw;
+
+      &-wrapper {
+        height: 100%;
+        width: 36.875vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__text {
+          @include font14;
+          letter-spacing: -0.06em;
+          line-height: 1.7;
+          color: #808080;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    /*** 以下コンテンツ ***/
+    .top {
+      width: 100vw;
+      height: 100vh;
+      background: lightblue;
+      position: relative;
+
+      &__slogan {
+        color: #f15a24;
+        width: 78.125vw;
+        margin: 0 auto;
+
+        &--en {
+          @include font65;
+          line-height: 1.4;
+          letter-spacing: -0.04em;
+          top: 30%;
+        }
+        &--ja {
+          @include font23;
+          top: 70%;
+          margin-top: 3.906vw;
+        }
+      }
+    }
+
+    .news {
+      position: relative;
+      top: -5.078vw;
+
+      &-container {
+        width: 78.125vw;
+        height: 5.078vw;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 2.5vw;
+        margin: 0 auto;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 6.25vw;
+
+        &-wrapper {
+          display: flex;
+          align-items: center;
+
+          &__news {
+            @include font-mont;
+            @include font17;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #f15a24;
+            margin-right: 4.688vw;
+          }
+          &__date {
+            @include font-mont;
+            @include font15;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #999999;
+            margin-right: 0.781vw;
+          }
+
+          &__title {
+            @include font14;
+            letter-spacing: 0.02em;
+            width: 39.063vw;
+          }
+        }
+
+        &__indicator {
+          width: 8.75vw;
+          height: 0.781vw;
+          background: lightgoldenrodyellow;
+        }
+      }
+    }
+
+    .sec {
+      &-container {
+        &-wrapper {
+          position: relative;
+          display: flex;
+          background: rgba(220, 233, 235, 1);
+          // height: 35.156vw;
+          height: auto;
+          overflow: visible;
+
+          &-image {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: relative;
+            right: 8.594vw;
+            padding-top: 7.813vw;
+
+            &__pop {
+              position: absolute;
+              top: 5.469vw;
+              right: 20.703vw;
+              width: 11.719vw;
+              height: 10.156vw;
+              opacity: 0;
+              z-index: 2;
+            }
+            &__icon {
+              width: 30.469vw;
+              height: 31.25vw;
+              // background: rgba(220, 233, 235, 1);
+              background: none;
+              object-fit: contain;
+              position: relative;
+              z-index: 1;
+            }
+            &__number {
+              position: absolute;
+              right: 2.344vw;
+              bottom: 0.781vw;
+              @include font90;
+              @include font-mont;
+              font-weight: 100;
+              color: #ed6f4f;
+              letter-spacing: -0.08em;
+              z-index: 2;
+            }
+          }
+
+          &-box {
+            width: 50%;
+            display: flex;
+            background: rgba(243, 247, 249, 1);
+
+            .contents {
+              // height: auto;
+
+              &-wrapper {
+                justify-content: flex-end;
+
+                &__text {
+                  height: 15.625vw;
+                }
+              }
+            }
+          }
+
+          &__arrow {
+            position: absolute;
+            left: 50%;
+            top: 0;
+
+            &::before,
+            ::after {
+              position: absolute;
+              top: 3.125vw;
+              bottom: 0;
+              margin: auto;
+              content: "";
+            }
+            &::before {
+              width: 2.109vw;
+              height: 2.109vw;
+              border-top: 1px solid rgba(237, 111, 79, 1);
+              border-right: 1px solid rgba(237, 111, 79, 1);
+              transform: translateX(-50%) rotate(135deg);
+            }
+          }
+        }
+
+        &-wrapper:nth-child(3) {
+          align-items: center;
+          // height: 37.5vw;
+          height: auto;
+          align-items: initial;
+
+          & .sec-container-wrapper {
+            &-box {
+              // height: 100%;
+              // align-items: center;
+            }
+
+            &-image {
+              padding-bottom: 3.906vw;
+
+              &__number {
+                bottom: 4.688vw;
+              }
+              &__pop {
+                top: 5.469vw;
+              }
+            }
+          }
+        }
+      }
+
+      .viewmore {
+        position: relative;
+        bottom: 1.563vw;
+      }
+    }
+
+    // service と companyの共通CSS
+    .sc {
+      &-container {
+        height: 46.875vw;
+        display: flex;
+
+        .contents {
+          background: rgba(243, 247, 249, 1);
+          width: 100%;
+          height: 100%;
+
+          &-wrapper {
+            padding: 0 2.734vw;
+
+            &__text {
+              height: 19.531vw;
+            }
+          }
+        }
+
+        &-image {
+          width: 100%;
+
+          &__image {
+            width: 50vw;
+            height: 46.875vw;
+          }
+        }
+      }
+    }
+
+    .service {
+      .sc-container {
+        .contents {
+          &-wrapper {
+            margin: 0 0 0 auto;
+          }
+        }
+
+        &-image {
+          &__image {
+            &--1 {
+              width: 20.547vw;
+              height: 20.547vw;
+              top: 4.688vw;
+              left: -2.734vw;
+            }
+            &--2 {
+              width: 24.141vw;
+              height: 24.141vw;
+              top: -1.953vw;
+              left: 22.656vw;
+            }
+            &--3 {
+              width: 27.031vw;
+              height: 27.031vw;
+              left: 11.719vw;
+              bottom: -5.078vw;
+            }
+          }
+
+          &__bg {
+            padding-top: 23.438vw;
+            margin-top: -23.437vw;
+          }
+        }
+      }
+    }
+
+    .company {
+      .sc-container {
+        flex-direction: row-reverse;
+
+        .contents {
+          &-wrapper {
+            margin: 0 auto 0 0;
+          }
+        }
+
+        &-image {
+          overflow: hidden;
+
+          &__image {
+            margin: 0 0 0 auto;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            right: 7.813vw;
+            bottom: 8.594vw;
+            width: 52.734vw;
+            height: 52.734vw;
+          }
+          &__bg {
+            position: absolute;
+            top: 0;
+            background: rgba(251, 180, 59, 1);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            padding-top: 20.063vw;
+            margin-top: -20.062vw;
+          }
+        }
+      }
+    }
+
+    .contact {
+      &-container {
+        display: flex;
+        border-radius: 3.203vw;
+        overflow: hidden;
+        width: 78.125vw;
+        margin: auto;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+        @include font0;
+        margin-top: 5.078vw;
+
+        .contents {
+          background: rgba(220, 233, 235, 1);
+          width: 39.063vw;
+
+          &-wrapper {
+            width: 33.594vw;
+
+            .title {
+              &__text {
+              }
+            }
+
+            &__text {
+              height: 19.531vw;
+            }
+            .viewmore {
+            }
+          }
+        }
+
+        &-image {
+          width: 39.063vw;
+          background: white;
+
+          &__image {
+            width: 39.063vw;
+          }
+        }
+      }
+    }
+
+    
+  }
+}
+
+/*********************************/
+/*               SP              */
+/*********************************/
+@media (max-width: 768px) {
+  #index {
+    /*** 以下共通部位 ***/
+    // top pageのcontentsのtext部分
+    .contents {
+      width: 41.797vw;
+      height: 36.953vw;
+
+      width: 84vw;
+      margin: 0 auto;
+
+      &-wrapper {
+        width: 84vw;
+
+        &__text {
+          height: 50vw;
+        }
+      }
+    }
+
+    /*** 以下コンテンツ ***/
+    .top {
+      &__bg {
+        display: none;
+      }
+      &__slogan {
+        width: 84vw;
+
+        &--en {
+          position: initial;
+          @include font40;
+          line-height: 1.5;
+          top: 12%;
+          transform: initial;
+          margin-bottom: 5vw;
+        }
+        &--ja {
+          position: initial;
+          @include font17;
+          top: 34%;
+          transform: initial;
+          margin-top: 0;
+        }
+      }
+      & .top-box {
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .news {
+      position: relative;
+      top: 0;
+
+      &-container {
+        padding: 6vw;
+        box-shadow: 0 0 2vw 0.5vw rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: -40vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 84vw;
+        height: 30vw;
+        box-sizing: border-box;
+        background: #f3f7f9;
+        border-radius: 6.5vw;
+
+        &-wrapper {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          height: 100%;
+
+          &__news {
+            margin-right: 0;
+          }
+          &__date {
+            margin-right: 0;
+            position: relative;
+            top: -2vw;
+          }
+
+          &__title {
+            width: 60vw;
+          }
+        }
+
+        &__indicator {
+          background: none;
+          width: auto;
+          height: auto;
+
+          &__circle {
+            background: #e5e5e5;
+            width: 1.947vw;
+            height: 1.947vw;
+            border-radius: 50%;
+
+            &--active {
+              background: #f15a24;
+            }
+          }
+          &__vertical {
+            width: 0.267vw;
+            height: 2.667vw;
+            background: #e5e5e5;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    .sec {
+      position: relative;
+
+      &-container {
+        padding-bottom: 15vw;
+
+        &-wrapper {
+          flex-direction: column;
+          height: auto !important;
+          background: none;
+
+          &-image {
+            width: 68vw;
+            height: 73.333vw;
+            margin: 10vw auto;
+            right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &__pop {
+              width: 25.867vw;
+              height: 22.4vw;
+              top: 0;
+              left: 0;
+              right: auto;
+            }
+            &__icon {
+              width: 60.8vw;
+              height: 60.8vw;
+              margin: 0 auto;
+              background: none;
+            }
+            &__number {
+              right: 2.344vw;
+              bottom: 0.781vw;
+              @include font60;
+            }
+          }
+
+          &-box {
+            width: 100%;
+            background: none;
+
+            .contents {
+              height: auto;
+
+              &-wrapper {
+                &__text {
+                  height: 45.625vw;
+                }
+              }
+            }
+          }
+
+          &__arrow {
+            display: none;
+          }
+        }
+
+        &-wrapper:nth-child(3) {
+          & .sec-container-wrapper {
+            &-box {
+            }
+
+            &-image {
+              padding-bottom: 0px;
+
+              &__number {
+                bottom: 0px;
+              }
+              &__pop {
+                top: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      &-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        display: flex;
+
+        &__bg {
+          width: 50%;
+          height: 100%;
+
+          &--color1 {
+            background: #dce9eb;
+          }
+          &--color2 {
+            background: #f3f7f9;
+          }
+        }
+      }
+
+      .viewmore {
+        position: relative;
+        bottom: 0.391vw;
+      }
+    }
+
+    // service と companyの共通CSS
+    .sc {
+      &-container {
+        flex-direction: column-reverse;
+        height: auto;
+
+        .contents {
+          height: 90vw;
+
+          &-wrapper {
+            margin: 0 auto !important;
+            padding: 0;
+
+            &__text {
+              height: 45vw;
+            }
+          }
+        }
+
+        &-image {
+          width: 100vw;
+          height: 90vw;
+
+          &__image {
+            width: 100vw;
+            height: 90vw;
+          }
+        }
+      }
+    }
+
+    .service {
+      & .sc-container-image {
+        &__image {
+          &--1 {
+            width: 41.6vw;
+            height: 41.6vw;
+            top: 7.688vw;
+            left: -6.734vw;
+          }
+          &--2 {
+            width: 48.8vw;
+            height: 48.8vw;
+            top: -4vw;
+            left: 45.656vw;
+          }
+          &--3 {
+            width: 54.667vw;
+            height: 54.667vw;
+            left: 25vw;
+            bottom: -13.078vw;
+          }
+        }
+
+        &__bg {
+          padding-top: 20vw;
+          margin-top: -20vw;
+        }
+      }
+    }
+    .company {
+      .sc-container {
+        flex-direction: column-reverse;
+
+        &-image {
+          &__image {
+            bottom: 52vw;
+            right: 42vw;
+            width: 138.667vw;
+            height: 138.667vw;
+          }
+          &__bg {
+            padding-top: 30vw;
+            margin-top: -30vw;
+          }
+        }
+      }
+    }
+
+    .contact {
+      &-container {
+        margin-top: 10vw;
+        box-shadow: 0 0 2vw 0.5vw rgba(0, 0, 0, 0.1);
+        border-radius: 9vw;
+        flex-direction: column;
+        width: 92vw;
+
+        .contents {
+          width: 100%;
+          height: 94.667vw;
+
+          &-wrapper {
+            width: 84vw;
+
+            .title {
+              &__text {
+              }
+            }
+
+            &__text {
+              height: 45vw;
+            }
+            .viewmore {
+            }
+          }
+        }
+
+        &-image {
+          width: 100%;
+
+          &__image {
+            width: 92vw;
+            height: 94.667vw;
+          }
+        }
+      }
+    }
+
+    
+  }
+}
+
+
+

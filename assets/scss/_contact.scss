@@ -1,0 +1,413 @@
+/*********************************/
+/*            PC Base            */
+/*********************************/
+#contact {
+  /*** 以下共通部位 ***/
+  background-color: #fff;
+  /** フォームリセット **/
+  input[type="number"]::-webkit-outer-spin-button, 
+  input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  } 
+  input[type="number"] { 
+  -moz-appearance:textfield; 
+  } 
+
+  /*** 以下共通部位 ***/
+  .container {
+    max-width: 1000px;
+    margin: 0
+      auto;
+    @include br(
+      pc-responsive
+    ) {
+      width: px_to_vw(
+        1000
+      );
+    }
+    @include br(
+      "sp"
+    ) {
+      width: sp_vw(
+        314
+      );
+    }
+  }
+  /*** 以下コンテンツ ***/
+  .top {
+    height: 448px;
+    background-color: #dde9eb;
+    position: relative;
+    @include br(
+      pc-responsive
+    ) {
+      height: px_to_vw(
+        448
+      );
+    }
+    @include br(
+      "sp"
+    ) {
+      height: sp_vw(
+        320
+      );
+    }
+  }
+
+  .form {
+    margin-top: 230px;
+    padding-top: 50px;
+    @include br(
+      pc-responsive
+    ) {
+      margin-top: px_to_vw(
+        230
+      );
+      padding-top: px_to_vw(
+        50
+      );
+    }
+    @include br(
+      "sp"
+    ) {
+      margin-top: sp_vw(
+        406
+      );
+      padding-top: 0;
+    }
+
+    &__head {
+      text-align: center;
+      @include font16;
+      letter-spacing: 0.1em;
+      line-height: (
+        24.5 /
+          16
+      );
+      color: #707070;
+      &--must {
+        color: #f15d23;
+      }
+    }
+
+    // &__step {
+    //   margin-top: 55px;
+    //   @include br(pc-responsive) {
+    //     margin-top: px_to_vw(55);
+    //   }
+    // }
+
+    &__q {
+      margin-top: 57px;
+      @include br(
+        pc-responsive
+      ) {
+        margin-top: px_to_vw(
+          57
+        );
+      }
+      @include br(
+        "sp"
+      ) {
+        margin-top: sp_vw(
+          50
+        );
+      }
+    }
+
+    &__content {
+      margin-top: 62px;
+      @include br(
+        pc-responsive
+      ) {
+        margin-top: px_to_vw(
+          62
+        );
+      }
+    }
+
+    &-radio {
+      padding-top: 45px;
+      padding-bottom: 45px;
+      width: 786px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #f0f0f0;
+      @include br(
+        pc-responsive
+      ) {
+        padding-top: px_to_vw(
+          45
+        );
+        padding-bottom: px_to_vw(
+          45
+        );
+        width: px_to_vw(
+          786
+        );
+        box-sizing: border-box;
+      }
+      @include br(
+        "sp"
+      ) {
+        width: 100%;
+        padding: sp_vw(
+            30
+          )
+          0;
+        box-sizing: border-box;
+      }
+      &__header {
+        text-align: center;
+        @include font14;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #808080;
+        @include br(
+          "sp"
+        ) {
+          line-height: 1.5;
+          padding: 0
+            sp_vw(
+              60
+            );
+          white-space: nowrap;
+        }
+      }
+
+      &__lists {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        @include br(
+          pc-responsive
+        ) {
+          margin-top: px_to_vw(
+            40
+          );
+        }
+        @include br(
+          "sp"
+        ) {
+          flex-direction: column;
+          margin-top: sp_vw(
+            36
+          );
+          padding-left: sp_vw(
+            60
+          );
+        }
+      }
+
+      &
+        .mwform-radio-field {
+        display: block;
+        &:not(:first-child) {
+          margin-left: 38px;
+          @include br(
+            pc-responsive
+          ) {
+            margin-left: px_to_vw(
+              38
+            );
+          }
+          @include br(
+            sp
+          ) {
+            margin-top: sp_vw(
+              35
+            );
+            margin-left: 0;
+          }
+        }
+        input[type="radio"] {
+          &:checked
+            + .mwform-radio-field-text::after {
+            opacity: 1;
+            transform: scale(
+              1
+            );
+          }
+        }
+        label {
+          position: relative;
+          display: inline-block;
+          padding-left: 35px;
+          // padding: 3px 3px 3px 20px;
+          cursor: pointer;
+        }
+        &
+          .mwform-radio-field-text {
+          display: block;
+          @include font14;
+          font-weight: 700;
+          color: #808080;
+          letter-spacing: 0.08em;
+          margin-top: 1px;
+          &::before,
+          &::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            border-radius: 100%;
+            transition: all
+              0.2s;
+          }
+          &::before {
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px
+              solid
+              #dddddd;
+            border-radius: 50%;
+            background-color: #ffffff;
+            transform: translateY(
+              -50%
+            );
+            @include br(
+              pc-responsive
+            ) {
+              width: px_to_vw(
+                18
+              );
+              height: px_to_vw(
+                18
+              );
+            }
+          }
+
+          &::after {
+            opacity: 0;
+            transform: scale(
+                2
+              )
+              translateY(
+                -50%
+              );
+            left: 4px;
+            margin-top: -6px;
+            width: 12px;
+            height: 12px;
+            background-color: #f15d23;
+            @include br(
+              pc-responsive
+            ) {
+              width: px_to_vw(
+                12
+              );
+              height: px_to_vw(
+                12
+              );
+            }
+          }
+        }
+      }
+
+      // &__list {
+      //   &:not(:first-child) {
+      //     margin-left: 38px;
+      //     @include br(pc-responsive) {
+      //       margin-left: px_to_vw(38);
+      //     }
+      //     @include br(sp) {
+      //       margin-top: sp_vw(35);
+      //       margin-left: 0;
+      //     }
+      //   }
+      // }
+
+      &__input {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      &__dummy-input {
+        box-sizing: border-box;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 18px;
+        height: 18px;
+        border: 1px
+          solid
+          #dddddd;
+        border-radius: 50%;
+        background-color: #ffffff;
+        @include br(
+          pc-responsive
+        ) {
+          width: px_to_vw(
+            18
+          );
+          height: px_to_vw(
+            18
+          );
+        }
+      }
+
+      &__input-input {
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        &:checked
+          + .form-radio__dummy-input::before {
+          content: "";
+          display: block;
+          @include middle;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #f15d23;
+          @include br(
+            pc-responsive
+          ) {
+            width: px_to_vw(
+              10
+            );
+            height: px_to_vw(
+              10
+            );
+          }
+        }
+      }
+
+      &__label-text {
+        display: block;
+        margin-left: 23px;
+        @include font14;
+        font-weight: 700;
+        color: #808080;
+        letter-spacing: 0.08em;
+        @include br(
+          pc-responsive
+        ) {
+          margin-left: px_to_vw(
+            23
+          );
+        }
+        @include br(
+          "sp"
+        ) {
+          margin-left: sp_vw(
+            15
+          );
+        }
+      }
+    }
+
+    &__privacy {
+      margin-top: 66px;
+      @include br(
+        "pc-responsive"
+      ) {
+        margin-top: px_to_vw(
+          66
+        );
+      }
+    }
+  }
+}

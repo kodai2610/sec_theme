@@ -1,0 +1,587 @@
+/*********************************************/
+/*                    px -> vw                */
+/*********************************************/
+
+$pcWidth: 1280;
+$spWidth : 375;
+// $spWidth: 500;
+@function px_to_vw($pixelsVw) {
+  @return $pixelsVw / $pcWidth * 100vw;
+}
+@function sp_vw($pixelsVw) {
+  @return $pixelsVw / $spWidth * 100vw;
+}
+
+/*********************************************/
+/*                    px -> vh                */
+/*********************************************/
+$pcHeight: 678;
+$spHeight : 800;
+@function sp_vh($pixelsVh) {
+  @return $pixelsVh / $spHeight * 100vh;
+}
+
+@function px_vh($pixelsVh) {
+  @return $pixelsVh / $pcHeight * 100vh;
+}
+
+
+
+
+/*********************************************/
+/*                    px -> %                */
+/*********************************************/
+
+@function px_per($target,$base) {
+  @return $target / $base * 100%;
+}
+
+
+
+/*********************************/
+/*            common            */
+/*********************************/
+@mixin middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*********************************/
+/*           z-index            */
+/*********************************/
+$layer : (
+  futures-obj : 1,
+  futures-lists : 2,
+  message-box : 2,
+  message-circle : 1, 
+  sc-image : 2,
+  sc-bg : 1,
+  card1 : 10,
+  card2 : 20,
+  card3 : 30,
+  point-card1 : 30,
+  point-card2 : 20,
+  point-card3 : 10,
+  view-img: 10,
+  view-comment: 20,
+  view-data : 20,
+  entry : 99, 
+  modal-content: 9999,
+  modal-overlay: 9998,
+  bounce-icon: 98,
+  top-box: 99,
+  member-box--3 : 30,
+  member-box--2 : 20,
+  member-box--1 : 10,
+);
+
+@mixin z-index($key) {
+  z-index : map_get($layer,$key)
+}
+
+/*********************************/
+/*           animation            */
+/*********************************/
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode : forwards,
+){
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-delay: $delay;
+  animation-iteration-count: $iteration-count;
+  animation-direction: $direction;
+  animation-fill-mode: $fill-mode;
+}
+
+/*********************************/
+/*           breakpoints          */
+/*********************************/
+
+$breakpoints: (
+  'sp': '(max-width: 768px)', 
+  'pc-responsive' : '(min-width: 769px) and (max-width: 1279px)',
+  'down550' : '(max-width : 549px)',
+  'up550' : '(min-width: 550px) and (max-width: 768px)',
+  'up850': '(min-width: 769px) and (max-width: 850px)',
+  'up950' : '(min-width: 851px) and (max-width: 950px)',
+  'tab-adjust' : '(min-width: 600px) and (max-width: 768px)',
+  'pc' : '(min-width: 769px)',
+) !default;
+
+@mixin br($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+/*********************************************/
+/*                    fonts                   */
+/*********************************************/
+@mixin font0 {
+  @media (max-width: 768px) {
+    font-size: 0;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 0;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 0;
+  }
+}
+@mixin font10 {
+  @media (max-width: 768px) {
+    font-size: 2.667vw; //375pxのカンプで10pxの時
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 0.781vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 10px;
+  }
+}
+@mixin font11 {
+  @media (max-width: 768px) {
+    font-size: 2.93333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 0.859375vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 11px;
+  }
+}
+@mixin font12 {
+  @media (max-width: 768px) {
+    font-size: 3.2vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 0.938vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 12px;
+  }
+}
+@mixin font13 {
+  @media (max-width: 768px) {
+    font-size: 3.466667vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.015625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 13px;
+  }
+}
+@mixin font14 {
+  @media (max-width: 768px) {
+    font-size: 3.733vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.094vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 14px;
+  }
+}
+@mixin font15 {
+  @media (max-width: 768px) {
+    font-size: 4vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.172vw;
+  }
+  @media (min-width: 1280px) {
+    font-size: 15px;
+  }
+}
+@mixin font16 {
+  @media (max-width: 768px) {
+    font-size: 4.267vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.25vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
+}
+@mixin font17 {
+  @media (max-width: 768px) {
+    font-size: 4.533vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.328vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 17px;
+  }
+}
+@mixin font18 {
+  @media (max-width: 768px) {
+    font-size: 4.8vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.40625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 18px;
+  }
+}
+@mixin font20 {
+  @media (max-width: 768px) {
+    font-size: 5.333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.5625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+@mixin font21 {
+  @media (max-width: 768px) {
+    font-size: 5.6vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.640625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 21px;
+  }
+}
+@mixin font22 {
+  @media (max-width: 768px) {
+    font-size: 5.866vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.71875vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 22px;
+  }
+}
+@mixin font23 {
+  @media (max-width: 768px) {
+    font-size: 6.133vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.797vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 23px;
+  }
+}
+@mixin font24 {
+  @media (max-width: 768px) {
+    font-size: 6.4vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.875vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 24px;
+  }
+}
+@mixin font25 {
+  @media (max-width: 768px) {
+    font-size: 6.6667vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 1.953125vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 25px;
+  }
+}
+
+@mixin font28 {
+  @media (max-width: 768px) {
+    font-size: 7.466vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 2.1875vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 28px;
+  }
+}
+@mixin font30 {
+  @media (max-width: 768px) {
+    font-size: 8vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 2.34375vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 30px;
+  }
+}
+@mixin font32 {
+  @media (max-width: 768px) {
+    font-size: 8.5333vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 2.5vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 32px;
+  }
+}
+@mixin font40 {
+  @media (max-width: 768px) {
+    font-size: 10.667vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.125vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
+}
+@mixin font42 {
+  @media (max-width: 768px) {
+    font-size: 12.5333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.28125vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 42px;
+  }
+}
+@mixin font43 {
+  @media (max-width: 768px) {
+    font-size: 11.4666vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.3359375vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 43px;
+  }
+}
+@mixin font44 {
+  @media (max-width: 768px) {
+    font-size: 11.7333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.4375vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 44px;
+  }
+}
+@mixin font47 {
+  @media (max-width: 768px) {
+    font-size: 12.533vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.672vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 47px;
+  }
+}
+@mixin font48 {
+  @media (max-width: 768px) {
+    font-size: 12.8vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.75vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 48px;
+  }
+}
+
+@mixin font50 {
+  @media (max-width: 768px) {
+    font-size: 13.33vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 3.90625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 50px;
+  }
+}
+
+@mixin font60 {
+  @media (max-width: 768px) {
+    font-size: 16vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 4.688vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 60px;
+  }
+}
+
+@mixin font63 {
+  @media (max-width: 768px) {
+    font-size: 16.8vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 4.921875vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 63px;
+  }
+}
+@mixin font65 {
+  @media (max-width: 768px) {
+    font-size: 17.333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 5.078vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 65px;
+  }
+}
+@mixin font68 {
+  @media (max-width: 768px) { 
+    font-size: 18.1333vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 5.3125vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 68px;
+  }
+}
+@mixin font70 {
+  @media (max-width: 768px) { 
+    font-size: 18.6666vw;
+    
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 5.4vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 70px;
+  }
+}
+
+@mixin font72 {
+  @media (max-width: 768px) {
+    font-size: 19.2vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 5.625vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 72px;
+  }
+}
+@mixin font80 {
+  @media (max-width: 768px) {
+    font-size: 21.3vw; 
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 6.25vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 80px;
+  }
+}
+@mixin font90 {
+  @media (max-width: 768px) {
+    font-size: 24vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 7.031vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 90px;
+  }
+}
+@mixin font97 {
+  @media (max-width: 768px) {
+    font-size: 25.86666vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 7.578125vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 97px;
+  }
+}
+@mixin font110 {
+  @media (max-width: 768px) {
+    font-size: 29.33vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 8.59375vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 110px;
+  }
+}
+@mixin font123 {
+  @media (max-width: 768px) {
+    font-size: 32.8vw;
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 9.609375vw;
+  }
+  @media (min-width: 1280px) {
+    font-size: 123px;
+  }
+}
+
+@mixin font {
+  @media (max-width: 768px) {
+  }
+  @media (min-width: 769px) and (max-width: 1279px) {
+  }
+
+  @media (min-width: 1280px) {
+  }
+}
