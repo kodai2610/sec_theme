@@ -20,6 +20,9 @@
             </li>
             <li class="menu__lists__list menu__lists__list--join"><a href="<?php echo esc_url(home_url('/recruit')); ?>" class="menu__lists__list__link--border" ><p class="menu__lists__list__link">Join us<br>採用情報</p></a></li>
             <li class="menu__lists__list">
+              <a class="menu__lists__list__link" href="<?php echo esc_url(home_url('/service')); ?>" >Training<br>研修制度</a>
+            </li>
+            <li class="menu__lists__list">
               <a class="menu__lists__list__link" href="<?php echo esc_url(home_url('/service')); ?>" >Service<br>事業概要</a>
             </li>
             <li class="menu__lists__list">
@@ -115,6 +118,9 @@
             </li>
             <li class="menu__lists__list">
               <a class="menu__lists__list__link"  href="<?php echo esc_url(home_url('/service')); ?>">Service<br>事業概要</a>
+            </li>
+            <li class="menu__lists__list">
+              <a href="<?php echo esc_url(home_url('/training')); ?>" class="menu__lists__list__link" >Training<br>研修制度</a>
             </li>
             <li class="menu__lists__list">
               <a href="<?php echo esc_url(home_url('/company')); ?>" class="menu__lists__list__link" >Company<br>会社情報</a>

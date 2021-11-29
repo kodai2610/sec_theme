@@ -97,7 +97,8 @@ select::-ms-expand {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1000px;
+    // width: 1000px;
+    width: 1100px;
     margin: 0 auto;
 
     .logo-image {
@@ -177,7 +178,8 @@ select::-ms-expand {
 
         &__list--sec {
           & .menu__lists__list__link {
-            margin: 0 5px;
+            // margin: 0 5px;
+            margin: 0 8px;
 
             &--arrow {
               line-height: initial;
@@ -2054,7 +2056,8 @@ form .error {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 78.125vw;
+      // width: 78.125vw;
+      width: 90vw;
       margin: 0 auto;
 
       .logo-image {

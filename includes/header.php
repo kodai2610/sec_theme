@@ -20,6 +20,10 @@
             </li>
             <li class="menu__lists__list menu__lists__list--join"><a href="<?php echo esc_url(home_url('/recruit')); ?>" class="menu__lists__list__link--border" ><p class="menu__lists__list__link">Join us<br>採用情報</p></a></li>
             <li class="menu__lists__list">
+              <a class="menu__lists__list__link"  href="<?php echo esc_url(home_url('/training')); ?>">Training<br>研修制度</a>
+              <!-- <a href="" class="menu__lists__list__link">事業概要</a> -->
+            </li>
+            <li class="menu__lists__list">
               <a class="menu__lists__list__link"  href="<?php echo esc_url(home_url('/service')); ?>">Service<br>事業概要</a>
               <!-- <a href="" class="menu__lists__list__link">事業概要</a> -->
             </li>
@@ -58,6 +62,12 @@
             <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="hamburger__menu__lists__list__link" >
               <p class="hamburger__menu__lists__list__link__text hamburger__menu__lists__list__link__text--en">Join us</p>
               <p class="hamburger__menu__lists__list__link__text hamburger__menu__lists__list__link__text--ja">採用情報</p>
+            </a>
+          </li>
+          <li class="hamburger__menu__lists__list">
+            <a href="<?php echo esc_url(home_url('/training')); ?>" class="hamburger__menu__lists__list__link" >
+              <p class="hamburger__menu__lists__list__link__text hamburger__menu__lists__list__link__text--en">Training</p>
+              <p class="hamburger__menu__lists__list__link__text hamburger__menu__lists__list__link__text--ja">研修制度</p>
             </a>
           </li>
           <li class="hamburger__menu__lists__list">
@@ -109,6 +119,9 @@
               <a href="<?php echo esc_url(home_url('/data'));  ?>" class="menu__lists__list__link" >Data for S.E.C<br>数字でみるS.E.C</a>
               <p class="menu__lists__list__link menu__lists__list__link--arrow">＞</p>
               <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="menu__lists__list__link--border" ><p class="menu__lists__list__link">Join us<br>採用情報</p></a>
+            </li>
+            <li class="menu__lists__list">
+              <a class="menu__lists__list__link" href="<?php echo esc_url(home_url('/training')); ?>" >Training<br>研修制度</a>
             </li>
             <li class="menu__lists__list">
               <a class="menu__lists__list__link" href="<?php echo esc_url(home_url('/service')); ?>" >Service<br>事業概要</a>
