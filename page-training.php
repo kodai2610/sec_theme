@@ -35,13 +35,13 @@
       <section class="secDream">
         <div class="title">エンジニアへの夢、叶えます。</div>
         <div class="text">
-          <div class="text1">
+          <div class="text__child">
             S.E.Cが創業以来ずっと続けていること。それは<br>「経験はないけど、エンジニアに挑戦したい！」<br>そんな思いを受け入れてきた、ということ。
           </div>
-          <div class="text2">
+          <div class="text__child">
             しかし技術職でもあるITエンジニア。<br>育てると一口に言ってもなかなか大変だったりするんです。
           </div>
-          <div class="text3">
+          <div class="text__child">
             S.E.Cでは長い年月をかけて試行錯誤し、誰もが立ち上がりやすい研修のカタチを模索。<br>外部研修に放り出したり、テキストを読んで終わるような研修ではなく、<br>経験の無い方に向けて3か月、経験者のお持ちの方でも<br>1か月間は研修を受けてもらうようにしています。
           </div>
         </div>
