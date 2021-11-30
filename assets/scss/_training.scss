@@ -199,10 +199,53 @@
   .secDream {
     margin-top: 230px;
     padding-top: 70px;
+    @include br(pc-responsive) {
+      margin-top: px_to_vw(230);
+      padding-top: px_to_vw(70);
+    }
     .title {
       text-align: center;
       @include font32;
       color: #F15D23;
+      letter-spacing: .1em;
+    }
+    .text {
+      text-align: center;
+      margin-top: 56px;
+      @include font18;
+      letter-spacing: .1em;
+      line-height: (36 / 18);
+      color: #707070;
+      font-weight:bold;
+      @include br('pc-responsive') {
+        margin-top: px_to_vw(56);
+      }
+      &__child:not(:nth-child(1)){  
+        margin-top: 42px;
+        @include br('pc-responsive') {    
+          margin-top: px_to_vw(42);
+        }
+      }
+    }
+    #animation_container {
+      margin: 40px auto 0;  
+      @include br('pc-responsive') {
+        margin: px_to_vw(40) auto 0;
+        width: px_to_vw(1000)!important;
+        height: px_to_vw(380)!important;
+      }
+      #canvas {
+        @include br('pc-responsive') {
+          width: px_to_vw(1000)!important;
+          height: px_to_vw(380)!important;
+        }
+      }
+      #dom_overlay_container {
+        @include br('pc-responsive') {
+          width: px_to_vw(1000)!important;
+          height: px_to_vw(380)!important;
+        }
+      }
     }
   }
 }

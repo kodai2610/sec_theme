@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body>
+  <body onload="init();" style="margin:0px;">
     <?php get_template_part('includes/header'); ?>
     <main id="training">
       <section class="top">
@@ -35,17 +35,27 @@
       <section class="secDream">
         <div class="title">エンジニアへの夢、叶えます。</div>
         <div class="text">
-          <div class="text1">
+          <div class="text__child">
             S.E.Cが創業以来ずっと続けていること。それは<br>「経験はないけど、エンジニアに挑戦したい！」<br>そんな思いを受け入れてきた、ということ。
           </div>
-          <div class="text2">
+          <div class="text__child">
             しかし技術職でもあるITエンジニア。<br>育てると一口に言ってもなかなか大変だったりするんです。
           </div>
-          <div class="text3">
+          <div class="text__child">
             S.E.Cでは長い年月をかけて試行錯誤し、誰もが立ち上がりやすい研修のカタチを模索。<br>外部研修に放り出したり、テキストを読んで終わるような研修ではなく、<br>経験の無い方に向けて3か月、経験者のお持ちの方でも<br>1か月間は研修を受けてもらうようにしています。
           </div>
         </div>
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1000px; height:380px">
+          <canvas id="canvas" width="1000" height="380" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+          <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1000px; height:380px; position: absolute; left: 0px; top: 0px; display: block;">
+          </div>
+	      </div>
       </section>
+      <div class="hp-bcc-white-scale">
+        <section class="secOurTraining">
+          
+        </section>
+      </div>
       <section class="pageTop">
         <div class="pageTop-box">
           <p class="pageTop-box__text">Page top</p>
@@ -59,6 +69,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"></script>
     <!--各ページ固有のjsを読み込む-->
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/anime.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/training.js"></script>
     <?php wp_footer(); ?>
   </body>
