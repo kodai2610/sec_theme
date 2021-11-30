@@ -16289,6 +16289,32 @@ body.no-scroll {
   }
 }
 
+#training .secDream #animation_container {
+  margin: 40px auto 0;
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  #training .secDream #animation_container {
+    margin: 3.125vw auto 0;
+    width: 78.125vw !important;
+    height: 29.6875vw !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  #training .secDream #animation_container #canvas {
+    width: 78.125vw !important;
+    height: 29.6875vw !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  #training .secDream #animation_container #dom_overlay_container {
+    width: 78.125vw !important;
+    height: 29.6875vw !important;
+  }
+}
+
 /*********************************/
 /*            PC Base            */
 /*********************************/

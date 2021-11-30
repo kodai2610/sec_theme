@@ -227,7 +227,25 @@
         }
       }
     }
-    
-
+    #animation_container {
+      margin: 40px auto 0;  
+      @include br('pc-responsive') {
+        margin: px_to_vw(40) auto 0;
+        width: px_to_vw(1000)!important;
+        height: px_to_vw(380)!important;
+      }
+      #canvas {
+        @include br('pc-responsive') {
+          width: px_to_vw(1000)!important;
+          height: px_to_vw(380)!important;
+        }
+      }
+      #dom_overlay_container {
+        @include br('pc-responsive') {
+          width: px_to_vw(1000)!important;
+          height: px_to_vw(380)!important;
+        }
+      }
+    }
   }
 }
