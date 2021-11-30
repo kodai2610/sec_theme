@@ -78,12 +78,12 @@ add_action( 'mwform_after_send_mw-wp-form-544', 'my_mwform_after_send_contact' )
 function my_mail( $Mail, $values, $Data ) {
     // $Data->get( 'hoge' ) で送信されたデータが取得できます。
     if($Data->get('contact-item') == 'サービス（協業）について') {
-      $Mail->to = 'koudai_akiwa1230@keio.jp'; // 送信先を変更
+      $Mail->to = 'test@test.com'; // 送信先を変更する
     }
     elseif($Data->get('contact-item') == 'ご意見・ご要望について') {
-      $Mail->to = 'kagurazaka1230@yahoo.co.jp';
+      $Mail->to = 'test@test.com';
     }else {
-      $Mail->to = 'koudaisports26@gmail.com';
+      $Mail->to = 'test@test.com';
     }
     return $Mail;
 }
